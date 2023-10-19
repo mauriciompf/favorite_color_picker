@@ -1,5 +1,6 @@
 import addColor from "./addColor";
 import { colorList } from "./colorList";
+import copyColor from "./utils/copyColor";
 
 const favWrap = document.querySelector(".fav-wrap") as HTMLElement;
 const fav = document.querySelector(".fav") as HTMLElement;
@@ -12,6 +13,7 @@ export default function saveColor() {
   if (!colorList.includes(getBodyBg)) {
     const item = document.createElement("li");
     item.setAttribute("class", "item");
+    item.setAttribute("title", "Copy color");
 
     const colorItem = document.createElement("div");
     colorItem.setAttribute("class", "color-item");
@@ -22,6 +24,10 @@ export default function saveColor() {
 
     item.appendChild(colorItem);
     fav.appendChild(item);
+
+    item.addEventListener("click", () => {
+      copyColor(getBodyBg);
+    });
 
     addColor(getBodyBg);
   }
