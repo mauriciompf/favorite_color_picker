@@ -4,24 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Favorite Color Picker</title>
+    <link
+      rel="shortcut icon"
+      href="https://static.vecteezy.com/system/resources/thumbnails/003/171/355/small/objective-lens-icon-with-six-rainbow-colors-vector.jpg"
+      type="image/x-icon"
+    />
     
-    <script type="module" crossorigin src="/favorite_color_picker/assets/index-6b5088fd.js"></script>
-    <link rel="stylesheet" href="/favorite_color_picker/assets/index-1f1deb64.css">
+    <script type="module" crossorigin src="/favorite_color_picker/assets/index-d712d5aa.js"></script>
+    <link rel="stylesheet" href="/favorite_color_picker/assets/index-f3bab075.css">
   </head>
   <body>
-    <main>
-      <div class="wrapper">
-        <h1>Favorite Color Picker</h1>
-        <div class="extra">
-          <p class="paragraph">This is your favorite color?</p>
-          <div class="btn-wrap">
-            <button data-btn1 class="save-btn">Save color</button>
-            <button data-btn2 class="next-btn">Next Color</button>
+    <main class="main">
+      <div class="main__wrapper">
+        <div class="description">
+          <h1 class="description-title">Favorite Color Picker</h1>
+          <p class="description-paragraph">This is your favorite color?</p>
+          <div class="description__btn-wrapper">
+            <button class="btn-wrapper__save-btn">Save color</button>
+            <button class="btn-wrapper__next-btn">Next Color</button>
           </div>
-          <div class="fav-wrap">
-            <h2 class="fav-title">Favorite colors</h2>
-            <ul class="fav active"></ul>
-          </div>
+        </div>
+        <div class="favorite-colors active">
+          <h2 class="favorite-colors-title">Favorite colors</h2>
+          <ul class="favorite-colors__list"></ul>
         </div>
       </div>
     </main>
