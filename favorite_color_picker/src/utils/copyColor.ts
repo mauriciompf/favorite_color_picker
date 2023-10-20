@@ -1,3 +1,5 @@
+import createElement from "./createElement";
+
 const copiedValues: string[] = [];
 
 export default async function copyColor(getBodyBg: string) {
@@ -16,9 +18,11 @@ export default async function copyColor(getBodyBg: string) {
 
       // Prevent create float message after copying the same color;
       if (!existingFloatMessage) {
-        const floatMessage = document.createElement("p") as HTMLElement;
+        const floatMessage = createElement("p", {
+          class: "float-message",
+        });
+
         floatMessage.textContent = "Color copied to clipboard.";
-        floatMessage.setAttribute("class", "float-message");
         (document.querySelector("main") as HTMLElement).appendChild(
           floatMessage
         );
