@@ -1,0 +1,31 @@
+@use "main.scss";
+.favorite-colors {
+  display: grid;
+  gap: 0.5rem;
+  text-align: center;
+  background-color: #eee;
+  border-radius: 0 0 1rem 1rem;
+  @extend .main-boxes;
+
+  &__list {
+    list-style-type: none;
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      &-color {
+        aspect-ratio: 100/20;
+        background-color: #eee;
+        border: 2px solid black;
+      }
+    }
+  }
+}

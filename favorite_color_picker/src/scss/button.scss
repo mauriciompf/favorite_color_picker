@@ -1,0 +1,15 @@
+.description__btn-wrapper > * {
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: all 200ms ease;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    background-color: black;
+    color: white;
+  }
+}

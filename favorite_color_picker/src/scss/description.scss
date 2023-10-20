@@ -1,0 +1,21 @@
+@use "main.scss";
+
+.description {
+  text-align: center;
+  display: grid;
+  gap: 0.5rem;
+  background-color: color-mix(in srgb, black, white 10%);
+  border-radius: 1rem 1rem 0 0;
+  color: white;
+  @extend .main-boxes;
+
+  &-paragraph {
+    font-size: 1.25rem;
+  }
+
+  &__btn-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+}
