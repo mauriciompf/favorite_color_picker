@@ -1,5 +1,5 @@
-import addColor from "./addColor";
 import { colorList } from "./colorList";
+import addColor from "./addColor";
 import copyColor from "./utils/copyColor";
 import createElement from "./utils/createElement";
 
