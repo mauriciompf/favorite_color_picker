@@ -2,6 +2,8 @@ import { colorList } from "./colorList";
 import addColor from "./addColor";
 import copyColor from "./utils/copyColor";
 import createElement from "./utils/createElement";
+import emptyColors from "./emptyColors";
+import { deleteColor, deleteAllColors } from "./deleteColor";
 
 const favoriteColors = document.querySelector(
   ".favorite-colors"
@@ -56,21 +58,17 @@ export default function saveColor() {
 
     // Delete a single color
     deleteColorButton.addEventListener("click", () => {
-      itemList.remove();
-      colorList.pop(); // Remove the current BgColor to colorList array;
+      deleteColor(itemList, currentBodyBg);
     });
 
     // Delete all colors
-    deleteAllColorsButton.addEventListener("click", function () {
-      const listofColorsHTML = [...colorListElem.children];
-
-      listofColorsHTML.forEach((element) => {
-        element.remove();
-      });
-      this.remove();
+    deleteAllColorsButton.addEventListener("click", () => {
+      deleteAllColors(deleteAllColorsButton, colorListElem);
     });
 
     addColor(currentBodyBg); // Add current bgColor to colorList array
     favoriteColors.classList.add("active"); // Display favorite colors
+
+    emptyColors();
   }
 }
