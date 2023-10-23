@@ -9,6 +9,10 @@
   color: white;
   @extend .main-boxes;
 
+  &-title {
+    letter-spacing: 0.1rem;
+  }
+
   &-paragraph {
     font-size: 1.25rem;
   }
