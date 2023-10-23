@@ -2,10 +2,15 @@
 .favorite-colors {
   display: grid;
   gap: 0.5rem;
+  margin-bottom: 1rem;
   text-align: center;
   background-color: #eee;
   border-radius: 0 0 1rem 1rem;
   @extend .main-boxes;
+
+  &__delete-all-btn {
+    cursor: pointer;
+  }
 
   &__list {
     list-style-type: none;
@@ -18,16 +23,26 @@
       gap: 1rem;
       margin-bottom: 0.5rem;
 
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-        cursor: pointer;
+      &-text {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+          cursor: pointer;
+        }
       }
+
       &-color {
         width: 1.25rem;
         aspect-ratio: 2/1;
         background-color: #eee;
         border: 2px solid black;
+      }
+
+      &-delete-btn {
+        cursor: pointer;
       }
     }
   }
