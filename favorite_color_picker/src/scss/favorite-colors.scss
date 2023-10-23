@@ -1,4 +1,6 @@
 @use "main.scss";
+@use "button.scss";
+
 .favorite-colors {
   display: grid;
   gap: 0.5rem;
@@ -9,7 +11,11 @@
   @extend .main-boxes;
 
   &__delete-all-btn {
-    cursor: pointer;
+    @extend .button;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    background-color: rgba(255, 0, 0, 0.4);
   }
 
   &__list {
@@ -42,8 +48,18 @@
       }
 
       &-delete-btn {
-        cursor: pointer;
+        @extend .button;
+        text-transform: uppercase;
+        padding: 0 0.5rem;
+        background-color: lightcoral;
+        border-radius: 9999px;
+        font-size: 0.75rem;
       }
     }
   }
+}
+
+.empty-HTML {
+  display: none;
+  font-style: italic;
 }
