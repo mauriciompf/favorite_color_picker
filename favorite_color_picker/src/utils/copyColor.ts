@@ -18,14 +18,19 @@ export default async function copyColor(getBodyBg: string) {
 
       // Prevent create float message after copying the same color;
       if (!existingFloatMessage) {
-        const floatMessage = createElement("p", {
-          class: "float-message",
-        });
-
-        floatMessage.textContent = "Color copied to clipboard.";
-        (document.querySelector("main") as HTMLElement).appendChild(
-          floatMessage
+        const floatMessage = createElement(
+          "p",
+          document.querySelector("main") as HTMLElement,
+          {
+            class: "float-message",
+          },
+          "Color copied to clipboard"
         );
+
+        // floatMessage.textContent = "Color copied to clipboard.";
+        // (document.querySelector("main") as HTMLElement).appendChild(
+        //   floatMessage
+        // );
 
         setTimeout(() => {
           floatMessage.remove();
