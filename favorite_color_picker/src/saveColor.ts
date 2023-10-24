@@ -11,10 +11,15 @@ const favoriteColors = document.querySelector(
 const colorListElem = document.querySelector(
   ".favorite-colors__list"
 ) as HTMLElement;
-const deleteAllColorsButton = createElement("button", {
-  class: "favorite-colors__delete-all-btn",
-  type: "button",
-});
+const deleteAllColorsButton = createElement(
+  "button",
+  undefined,
+  {
+    class: "favorite-colors__delete-all-btn",
+    type: "button",
+  },
+  "Delete all colors"
+);
 
 export default function saveColor() {
   // Extract the current bgColor from body tag using 'style' attribute
@@ -24,31 +29,33 @@ export default function saveColor() {
 
   // Prevent create the same color item in favorite colors
   if (!colorList.includes(currentBodyBg)) {
-    const itemList = createElement("li", {
+    const itemList = createElement("li", colorListElem, {
       class: "favorite-colors__list-item",
     });
-    const itemColor = createElement("div", {
+    const itemText = createElement(
+      "a",
+      itemList,
+      {
+        title: "Copy color",
+        class: "favorite-colors__list-item-text",
+        href: "#",
+      },
+      currentBodyBg
+    );
+    const itemColor = createElement("div", itemList, {
       class: "favorite-colors__list-item-color",
     });
-    const deleteColorButton = createElement("button", {
-      class: "favorite-colors__list-item-delete-btn",
-      type: "button",
-    });
-    const itemText = createElement("a", {
-      title: "Copy color",
-      class: "favorite-colors__list-item-text",
-      href: "#",
-    });
+    const deleteColorButton = createElement(
+      "button",
+      itemList,
+      {
+        class: "favorite-colors__list-item-delete-btn",
+        type: "button",
+      },
+      "x"
+    );
 
-    itemText.textContent = currentBodyBg;
-    deleteColorButton.textContent = "x";
     itemColor.style.backgroundColor = currentBodyBg;
-    deleteAllColorsButton.textContent = "Delete all colors";
-
-    itemList.appendChild(itemText); // li => a
-    itemList.appendChild(itemColor); // li => div
-    itemList.appendChild(deleteColorButton); // li > button
-    colorListElem.appendChild(itemList); // ul => li
     colorListElem.parentElement?.appendChild(deleteAllColorsButton);
 
     // Copy in clipboard
